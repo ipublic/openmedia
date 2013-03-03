@@ -45,25 +45,37 @@
 	
 
 		<!-- Content ================================================== -->	
-		<div class="span12">			
-			<% if content_for?(:title) %>
-				<div class="page-header">
-					<h1><%= yield(:title) %></h1>
+		<% if content_for?(:title) %>
+			<div class="row-fluid">			
+				<div class"span12">			
+					<div class="page-header">
+						<h1><%= yield(:title) %></h1>
+					</div>
 				</div>
-			<% end %>
+			</div>
+		<% end %>
 
-			<% flash.each do |name, msg| %>
-			  <div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
-			    <a class="close" data-dismiss="alert">×</a>
-		    		<%= msg %>
-			  </div>
-			<% end %>
+		<% if flash.present? %>
+			<div class="row-fluid">			
+				<div class"span12">			
+					<% flash.each do |name, msg| %>
+					  <div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
+					    <a class="close" data-dismiss="alert">×</a>
+				    		<%= msg %>
+					  </div>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
 
+		<div class="row-fluid">
+			<div class"span12">			
 			<%= yield %>
+			</div>
 		</div>
 
    <!-- Footer ================================================== -->
-		<footer class="footer span12">
+		<footer class="footer">
 			<hr />
 			<div class="row-fluid">
 				<div class="span4">
