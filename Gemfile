@@ -5,8 +5,6 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -49,11 +47,19 @@ gem 'capistrano'
 # gem 'debugger'
 
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
-gem "email_spec", ">= 1.4.0", :group => :test
 
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "meta_request"
   gem "mailcatcher"
+end
+
+group :test do
+  gem "spork-rails"
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  
+  gem "email_spec", ">= 1.4.0"
 end
