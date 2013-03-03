@@ -53,10 +53,18 @@ group :development do
   gem "binding_of_caller"
   gem "meta_request"
   gem "mailcatcher"
+  
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 group :test do
   gem "spork-rails"
+  gem "guard"
+  gem "guard-spork"
+  gem 'guard-cucumber'
+
+  gem 'rb-fsevent', '~> 0.9'
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
