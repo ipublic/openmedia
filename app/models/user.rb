@@ -1,5 +1,9 @@
 class User
   include Mongoid::Document
+
+  validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
+  field :time_zone,           :type => String, :default => ""
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
