@@ -1,10 +1,17 @@
-<div class="container-fluid">
-	<div class="hero-unit">
-		<h1>Civic OpenMedia</h1>
-		<p>Welcome to Civic OpenMedia, a publishing system for government open data</p>
-		<p><%= link_to 'Sign in', new_user_session_path, :class => "btn btn-primary btn-large"  %>
-		<%= link_to 'Sign up', new_user_registration_path, :class => "btn btn-primary btn-large" %></p>
-  </div>
+<div class="hero-unit span6">
+	<h1>Civic OpenMedia</h1>
+	<p>Welcome to Civic OpenMedia, a publishing system for government open data</p>
+	<p><%= link_to 'Sign in', new_user_session_path, :class => "btn btn-primary btn-large"  %>
+	<%= link_to 'Sign up', new_user_registration_path, :class => "btn btn-primary btn-large" %></p>
+</div>
+	
+<div class="hero-unit span6">
+	<ul>
+		<li>Site admin: register muni, customize site, curate/upload content</li>
+		<li>User: site lists, query site(s), create reports</li>
+		<li>Public (no login necessary): access published content by muni, or global</li>
+		<li>Objects: municipality</li>
+	</ul>
 </div>
 
 
