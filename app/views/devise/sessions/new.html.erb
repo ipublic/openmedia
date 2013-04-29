@@ -1,18 +1,24 @@
-<div class="offset4 span4">
-	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name) ) do |f| %>
-
-		<h2>Please sign in</h2>
-		<%= f.input :email, :label => false, :placeholder => "Email address", :input_html => {:class => 'input-xlarge' } %>
-		<%= f.input :password, :label => false, :placeholder => "Password", :input_html => {:class => 'input-xlarge' } %>
+<div class="login">
+	<div class="login-screen">
+		<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name) ) do |f| %>
+			<div class="login-icon">
+				<%= image_tag "illustrations/map.png", alt: "Welcome to Civic OpenMedia App" %>
+				<h4>Welcome to<small>Civic OpenMedia</small></h4>
+			</div>
+			<div class="login-form">
+				<%= f.input :email, :label => false, :placeholder => "Enter your email address", :input_html => {:class => 'login-field fui-man-16' } %>
+				<%= f.input :password, :label => false, :placeholder => "Password", :input_html => {:class => 'login-pass fui-lock-16' } %>
 	
 
-	  <% if devise_mapping.rememberable? -%>
-			<%= f.input :remember_me, :as => :boolean, :label => false, :inline_label => "Remember Me" %>
-	  <% end -%>
+			  <% if devise_mapping.rememberable? -%>
+					<%= f.input :remember_me, :as => :boolean, :label => false, :inline_label => "Remember Me" %>
+			  <% end -%>
 
-	  <div class="form-actions">
-	  	<%= f.submit "Sign in", :class => "btn btn-primary" %>
-		</div>
-		<%= render "devise/shared/links" %>
-	<% end %>
+			  <div class="form-actions">
+			  	<%= f.submit "Sign in", :class => "btn btn-primary btn-large btn-block" %>
+				</div>
+				<%= render "devise/shared/links" %>
+			</div>
+		<% end %>
+	</div>
 </div>
