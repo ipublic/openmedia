@@ -7,7 +7,7 @@
 		<%= f.input :email, :label => false, :placeholder => "Email address", :input_html => {:class => 'input-xlarge' } %>
 		<%= f.input :password, :label => false, :placeholder => "Password", :input_html => {:class => 'input-xlarge' } %>
 		<%= f.input :password_confirmation, :label => false, :placeholder => "Confirm password", :input_html => {:class => 'input-xlarge' } %>
-		<%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, :prompt => "Select your time zone" %>
+		<%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, required: true, :prompt => "Set your local time zone" %>
 
 		<div class="form-actions">
 			<%= f.submit "Sign up", :class => "btn btn-primary" %>
