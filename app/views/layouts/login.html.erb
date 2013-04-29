@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Civic OpenMedia</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="copyright" content="&copy; 2013 iPublic, LLC. All rights reserved">
+
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript></script>"
+	<![endif] -->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<!-- Container ================================================== -->
+	<div class="container-fluid">
+
+	
+
+		<!-- Content ================================================== -->	
+		<% if content_for?(:title) %>
+			<div class="row-fluid">			
+				<div class"span10">			
+					<div class="page-header">
+						<h1><%= yield(:title) %></h1>
+					</div>
+				</div>
+			</div>
+		<% end %>
+
+		<% if flash.present? %>
+			<div class="row-fluid">			
+				<div class"span10">			
+					<% flash.each do |name, msg| %>
+					  <div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
+					    <a class="close" data-dismiss="alert">×</a>
+				    		<%= msg %>
+					  </div>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+
+		<div class="row-fluid">
+			<%= yield %>
+		</div>
+
+</div> <!-- /container -->
+	
+</body>
+</html>
